@@ -1,0 +1,32 @@
+Kod css vazno je da pocetna tacka kazaljki bude na tacno 12 sati ili na 0:
+vazno je da kod kazaljki bude :transform-origin: bottom;
+Da izvorna tacka rotacije bude dole
+
+Sve kazaljke moraju da budu na 12 to jest na 0:
+
+Takodje je vazno do bude:
+ position:absolut;
+ left:50%
+ bottom:50;
+Da namestis kazaljke od dole ako i stavis da budu:
+ top: 50%;-sat ce ti biti naopacke;
+
+
+Kod js vazno je da napravis setIntervall :
+
+    let hou = document.getElementById('hou');Div sa kazaljkom hours
+    let min = document.getElementById('min');Div sa kazaljkom minutes
+    let sec = document.getElementById('sec');Div sa kazaljkom seceonds
+ 
+
+    let deg = 6;varijabla koja iznosi 6 sa kojom mnozimo ostale varijable
+    let time = new Date();Pravis varijablu
+    let h = time.getHours()*30; Var za dobijanja h*30 zato sto 12*30 =360deg toliko ima krug
+    let m = time.getMinutes()*deg; Var za dobijanja m*6 zato sto 60*6 =360deg toliko ima krug
+    let s = time.getSeconds()*deg; Var za dobijanja s *6  zato sto 60*6 =360deg toliko ima krug
+
+
+   
+    hou.style.transform =`rotate(${h+(m/12)}deg)`;Rotiranje kazaljke sata za deg:h(fino stelovanje kazaljke m/12)
+    min.style.transform =`rotate(${m}deg)`;    Rotiranje kazaljke sata za deg:m(trunutno minuta put *6)
+    sec.style.transform =`rotate(${s}deg)`;    Rotiranje kazaljke sata za deg:s(trunutno secundi put *6)
